@@ -3,25 +3,37 @@
 ////////////
 
 console.log("Challenge #1:");
-// Create an array called "roster" with the following names as 
+// Create an array called "roster" with the following names as
 // strings: Pikachu, MewTwo, Onix, Eevee
 // Console.log the length of the "roster" array
-
-const roster = ("Pikachu"," MewTwo","Onix","Eevee");
+//() ->  []
+let roster = ["Pikachu"," MewTwo","Onix","Eevee"];
 console.log(roster.length);
 
 // ==================================================================
 console.log("Challenge #2:");
-// push the user's first command line argument to the end of the 
-// "roster" array (ideally, it's a pokemon's name!)
-// console.log the "roster" array
+/* push the user's first command line argument to the end of the
+  "roster" array (ideally, it's a pokemon's name!)
+  console.log the "roster" array */
 
+// process.argv[] argument variable
+console.log("This is the argument "+ process.argv[2]);
+//These are the same...
+// Template Literal ``
+console.log(`This is the argument ${process.argv[2]}`);
+
+roster.push(process.argv[2]);
+//These are the same...
+//Spread operator (. . .) : breaks and array into it's seperate parts ...["Quin","cy"] ->  "Quin" "cy" not an array foo!
+roster = [...roster, process.argv[2]] // Under the hood "Quin","cy", `${whatever the argument is}`
+console.log(roster);
 // ==================================================================
 console.log("Challenge #3:");
-// remove the item from the "roster" array that corresponds to 
+// remove the item from the "roster" array that corresponds to
 // the user's second command line argument
 // NOTE: consider what data type command line arguments come in as
 // console.log the "roster" array
+
 
 //////////////////
 // CONDITIONALS //
@@ -30,7 +42,7 @@ console.log("Challenge #4:");
 // Create a variable called "catchChance" and set it equal to .25
 // Note: this corresponds to a 25% chance to catch a pokemon!
 
-// Create a variable called "catchAttempt" and set it equal to 
+// Create a variable called "catchAttempt" and set it equal to
 // Math.random()
 
 // Note: we'll learn more about Math.random() later, but for now
@@ -51,7 +63,7 @@ console.log("Challenge #5:");
 console.log("Challenge #6:");
 const elements = ["plant","fire","water"];
 const enemyAttackType = elements[Math.floor(Math.random()*elements.length)];
-// You've been provided a variable called "enemyAttackType" that is a 
+// You've been provided a variable called "enemyAttackType" that is a
 // random string that can be "plant","fire",or "water".
 
 // (assuming you have a "water" pokemon...)
@@ -83,7 +95,7 @@ const attackDmg = Math.floor(Math.random()*20);
 // You've been provided a variable named "attackDmg" that is a random
 // number.
 // Create a variable called "health" and set it equal to 100;
-// While "health" is above 0, subtract "attackDmg" from it and 
+// While "health" is above 0, subtract "attackDmg" from it and
 // console.log(`Health is at: ${health}`);
 
 // Hint: W3School While Loop : https://www.w3schools.com/jsref/jsref_while.asp
@@ -108,7 +120,7 @@ console.log("Bonus #2:");
 // Bonus #2:
 // If the last string in the "roster" array is "Ditto",
 // Console.log "console.log" ('cause it's Ditto...get it!?)
-// else, console.log the last string in the "roster" array 
+// else, console.log the last string in the "roster" array
 
 // ==================================================================
 console.log("Bonus #3:");
@@ -116,7 +128,7 @@ console.log("Bonus #3:");
 const enemyRoster = ["Bulbasaur","Raichu","Onix","Bob","",""];
 // You've been provided an array of strings called "enemyRoster"
 // Create a new empty array called "outcome"
-// For each item in the "roster" array, if the length of the item is 
+// For each item in the "roster" array, if the length of the item is
 // greater or equal to the length of the corresponding indexed string
 // in the "enemyRoster" array, then add "Win" to the "outcome" array.
 // Otherwise, add "Loss" to the "outcome" array.
